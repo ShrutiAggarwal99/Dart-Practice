@@ -1,3 +1,6 @@
+// Dart supports only Single Inheritance on classes (no Multiple Inheritance) - 'extends' keyword
+// For Multiple Inheritance there is something called Interface - 'implements' keyword
+
 import 'dart:math';
 
 void main() {
