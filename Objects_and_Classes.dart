@@ -41,13 +41,17 @@ class Complex{
   Complex.real(num val) : this(val,0);
   Complex.imaginary(num val) : this(0,val);
   
-  void setReal(num val) => this._real = val;
+  // getters and setters for the private members
+//   void setReal(num val) => this._real = val;
+//   num getReal() => _real;
+//   void setImaginary(num val) => this._imaginary = val;
+//   num getImaginary() => this._imaginary;
   
-  num getReal() => _real;
-  
-  void setImaginary(num val) => this._imaginary = val;
-  
-  num getImaginary() => this._imaginary;
+  // 
+  get real => _real;
+  set real(num val) => _real = val;
+  get imaginary => _imaginary;
+  set imaginary(num val) => _imaginary = val;
   
   @override
   String toString(){
@@ -63,7 +67,8 @@ class Complex{
   bool operator == (other){
     if(!(other is Complex))
       return false;
-    if(other.getReal() == this._real && other.getImaginary() == this._imaginary) 
+//     if(other.getReal() == this._real && other.getImaginary() == this._imaginary) 
+    if(other.real == this._real && other.imaginary == this._imaginary) 
       return true;
     else 
       return false;
