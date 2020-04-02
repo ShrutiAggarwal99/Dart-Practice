@@ -1,7 +1,7 @@
 void main() {
   
   var c = Complex(2,3);
-//   print(c.real);  // null
+//   print(c.real);  // null  : only when real was public in class Complex
 //   print(c.imaginary);  // null
   print(c); // toString() method of the class called
   
@@ -15,6 +15,11 @@ void main() {
   var c2 = Complex(2,3);
   print(c == c2);
   
+  var c3 = Complex.real(3);
+  var c4 = Complex.imaginary(-2);
+  print(c3);
+  print(c4);
+  
 }
 
 //types/classes named in UpperCamelCase by convention
@@ -25,10 +30,16 @@ class Complex{
   num _imaginary; // private
   
   // Constructor
-  Complex(num real, num imaginary){
-    this._real = real;
-    this._imaginary = imaginary;
-  }
+//   Complex(num real, num imaginary){
+//     this._real = real;
+//     this._imaginary = imaginary;
+//   }
+  
+  //Shorthand for Constructor
+  Complex(this._real, this._imaginary);
+  
+  Complex.real(num val) : this(val,0);
+  Complex.imaginary(num val) : this(0,val);
   
   void setReal(num val) => this._real = val;
   
