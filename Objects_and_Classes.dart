@@ -47,7 +47,7 @@ class Complex{
 //   void setImaginary(num val) => this._imaginary = val;
 //   num getImaginary() => this._imaginary;
   
-  // 
+  // shorthand for getters and setters
   get real => _real;
   set real(num val) => _real = val;
   get imaginary => _imaginary;
@@ -68,7 +68,7 @@ class Complex{
     if(!(other is Complex))
       return false;
 //     if(other.getReal() == this._real && other.getImaginary() == this._imaginary) 
-    if(other.real == this._real && other.imaginary == this._imaginary) 
+    if(other.real == this._real && other.imaginary == this._imaginary)  // members of other object accessed using getters
       return true;
     else 
       return false;
