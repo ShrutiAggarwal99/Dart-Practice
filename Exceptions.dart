@@ -36,4 +36,7 @@ void main() {
   
   // try-on way is better to use when we know what should happen when a specific type of error occurs
   
+  // In a try block as soon as an exception occurs, no line below that line in the try block is executed.
+  // It goes to the catch or ob blocks immediately
+  
 }
